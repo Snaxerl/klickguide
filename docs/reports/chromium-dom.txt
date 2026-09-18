@@ -1,0 +1,22 @@
+
+> klickguide@1.0.2 test:dom
+> python -m unittest discover -s tests/browser -p test_recorder_dom.py -v
+
+test_preview_fits_without_changing_bitmap_or_aspect_ratio (test_recorder_dom.EditorLayoutTests.test_preview_fits_without_changing_bitmap_or_aspect_ratio) ... ok
+test_sidebar_clamps_display_not_saved_text (test_recorder_dom.EditorLayoutTests.test_sidebar_clamps_display_not_saved_text) ... ok
+test_capture_locks_restore_only_their_own_lease (test_recorder_dom.RecorderDomTests.test_capture_locks_restore_only_their_own_lease) ... ok
+test_dismissed_dialog_keeps_pre_click_image_and_trusted_click (test_recorder_dom.RecorderDomTests.test_dismissed_dialog_keeps_pre_click_image_and_trusted_click) ... ok
+test_injection_is_idempotent (test_recorder_dom.RecorderDomTests.test_injection_is_idempotent) ... ok
+test_keyboard_click_is_recorded_once (test_recorder_dom.RecorderDomTests.test_keyboard_click_is_recorded_once) ... ok
+test_mutations_inside_open_shadow_root_invalidate_frame (test_recorder_dom.RecorderDomTests.test_mutations_inside_open_shadow_root_invalidate_frame) ... ok
+test_newly_rendered_control_never_uses_old_page_frame (test_recorder_dom.RecorderDomTests.test_newly_rendered_control_never_uses_old_page_frame) ... ok
+test_pointer_hover_does_not_create_steps (test_recorder_dom.RecorderDomTests.test_pointer_hover_does_not_create_steps) ... ok
+test_private_input_value_never_enters_caption (test_recorder_dom.RecorderDomTests.test_private_input_value_never_enters_caption) ... ok
+test_search_result_uses_heading_not_publisher_or_url (test_recorder_dom.RecorderDomTests.test_search_result_uses_heading_not_publisher_or_url) ... ok
+test_toolbar_is_absent_in_actual_prepared_pixels (test_recorder_dom.RecorderDomTests.test_toolbar_is_absent_in_actual_prepared_pixels) ... ok
+test_two_fast_clicks_on_unchanged_page_both_have_pre_click_frames (test_recorder_dom.RecorderDomTests.test_two_fast_clicks_on_unchanged_page_both_have_pre_click_frames) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 18.817s
+
+OK

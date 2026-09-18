@@ -1,0 +1,1265 @@
+
+> klickguide@1.0.2 package
+> npm run check && node scripts/package.mjs
+
+
+> klickguide@1.0.2 check
+> npm run format:check && npm run typecheck && npm test && node scripts/check.mjs
+
+
+> klickguide@1.0.2 format:check
+> node scripts/format.mjs --check
+
+Formatting checked: 45 files.
+
+> klickguide@1.0.2 typecheck
+> tsc --noEmit
+
+
+> klickguide@1.0.2 test
+> npm run build && node scripts/test.mjs
+
+
+> klickguide@1.0.2 build
+> node scripts/build.mjs
+
+Built unpacked extension in dist/
+TAP version 13
+# Subtest: HTML is self-contained and disallows scripts and network connections
+ok 1 - HTML is self-contained and disallows scripts and network connections
+  ---
+  duration_ms: 18.746489
+  type: 'test'
+  ...
+# Subtest: guide titles cannot inject markup into HTML
+ok 2 - guide titles cannot inject markup into HTML
+  ---
+  duration_ms: 0.463281
+  type: 'test'
+  ...
+# Subtest: step bodies and descriptions are escaped
+ok 3 - step bodies and descriptions are escaped
+  ---
+  duration_ms: 1.202976
+  type: 'test'
+  ...
+# Subtest: export rejects remote and scriptable image URLs
+ok 4 - export rejects remote and scriptable image URLs
+  ---
+  duration_ms: 0.585328
+  type: 'test'
+  ...
+# Subtest: HTML checkboxes work without embedded scripts
+ok 5 - HTML checkboxes work without embedded scripts
+  ---
+  duration_ms: 0.511709
+  type: 'test'
+  ...
+# Subtest: missing screenshots remain visibly marked
+ok 6 - missing screenshots remain visibly marked
+  ---
+  duration_ms: 0.245857
+  type: 'test'
+  ...
+# Subtest: invalid accent colors fall back to the default
+ok 7 - invalid accent colors fall back to the default
+  ---
+  duration_ms: 0.447671
+  type: 'test'
+  ...
+# Subtest: Markdown uses only known generated image paths
+ok 8 - Markdown uses only known generated image paths
+  ---
+  duration_ms: 0.458535
+  type: 'test'
+  ...
+# Subtest: Markdown escapes executable HTML and link injection
+ok 9 - Markdown escapes executable HTML and link injection
+  ---
+  duration_ms: 0.427126
+  type: 'test'
+  ...
+# Subtest: CRC32 matches a standard test vector
+ok 10 - CRC32 matches a standard test vector
+  ---
+  duration_ms: 0.42993
+  type: 'test'
+  ...
+# Subtest: ZIP includes local headers, directory and end record
+ok 11 - ZIP includes local headers, directory and end record
+  ---
+  duration_ms: 0.464998
+  type: 'test'
+  ...
+# Subtest: ZIP bytes are deterministic for unchanged entries
+ok 12 - ZIP bytes are deterministic for unchanged entries
+  ---
+  duration_ms: 0.632926
+  type: 'test'
+  ...
+# Subtest: reject unsafe ZIP path ../secret
+ok 13 - reject unsafe ZIP path ../secret
+  ---
+  duration_ms: 0.28184
+  type: 'test'
+  ...
+# Subtest: reject unsafe ZIP path /absolute
+ok 14 - reject unsafe ZIP path /absolute
+  ---
+  duration_ms: 0.062165
+  type: 'test'
+  ...
+# Subtest: reject unsafe ZIP path images/../../file
+ok 15 - reject unsafe ZIP path images/../../file
+  ---
+  duration_ms: 0.055173
+  type: 'test'
+  ...
+# Subtest: reject unsafe ZIP path C:\\Windows\\file
+ok 16 - reject unsafe ZIP path C:\\Windows\\file
+  ---
+  duration_ms: 0.075042
+  type: 'test'
+  ...
+# Subtest: duplicate ZIP entries are rejected
+ok 17 - duplicate ZIP entries are rejected
+  ---
+  duration_ms: 0.169575
+  type: 'test'
+  ...
+# Subtest: empty ZIP is a valid empty end record
+ok 18 - empty ZIP is a valid empty end record
+  ---
+  duration_ms: 0.09703
+  type: 'test'
+  ...
+# Subtest: an exact pre-click frame matches its visible control
+ok 19 - an exact pre-click frame matches its visible control
+  ---
+  duration_ms: 1.94406
+  type: 'test'
+  ...
+# Subtest: reject a different document
+ok 20 - reject a different document
+  ---
+  duration_ms: 0.354778
+  type: 'test'
+  ...
+# Subtest: reject a new page revision
+ok 21 - reject a new page revision
+  ---
+  duration_ms: 0.241753
+  type: 'test'
+  ...
+# Subtest: reject a different scroll position
+ok 22 - reject a different scroll position
+  ---
+  duration_ms: 0.176152
+  type: 'test'
+  ...
+# Subtest: reject an altered viewport width
+ok 23 - reject an altered viewport width
+  ---
+  duration_ms: 0.221742
+  type: 'test'
+  ...
+# Subtest: reject a newly created control
+ok 24 - reject a newly created control
+  ---
+  duration_ms: 0.189352
+  type: 'test'
+  ...
+# Subtest: reject a moved target
+ok 25 - reject a moved target
+  ---
+  duration_ms: 0.402462
+  type: 'test'
+  ...
+# Subtest: reject a resized target
+ok 26 - reject a resized target
+  ---
+  duration_ms: 0.163323
+  type: 'test'
+  ...
+# Subtest: reject an absent target rectangle
+ok 27 - reject an absent target rectangle
+  ---
+  duration_ms: 0.548526
+  type: 'test'
+  ...
+# Subtest: reject a future screenshot
+ok 28 - reject a future screenshot
+  ---
+  duration_ms: 0.658947
+  type: 'test'
+  ...
+# Subtest: reject an expired frame
+ok 29 - reject an expired frame
+  ---
+  duration_ms: 0.245557
+  type: 'test'
+  ...
+# Subtest: frames from a different guide cannot be reused
+ok 30 - frames from a different guide cannot be reused
+  ---
+  duration_ms: 0.218687
+  type: 'test'
+  ...
+# Subtest: a visible toolbar disqualifies the image
+ok 31 - a visible toolbar disqualifies the image
+  ---
+  duration_ms: 0.150967
+  type: 'test'
+  ...
+# Subtest: an occluded target not in the frame cannot be annotated
+ok 32 - an occluded target not in the frame cannot be annotated
+  ---
+  duration_ms: 0.136535
+  type: 'test'
+  ...
+# Subtest: subpixel layout rounding is tolerated
+ok 33 - subpixel layout rounding is tolerated
+  ---
+  duration_ms: 0.1429
+  type: 'test'
+  ...
+# Subtest: more than one pixel of target movement is not tolerated
+ok 34 - more than one pixel of target movement is not tolerated
+  ---
+  duration_ms: 0.099294
+  type: 'test'
+  ...
+# Subtest: buffer chooses newest qualifying pre-action frame, not newer post-action image
+ok 35 - buffer chooses newest qualifying pre-action frame, not newer post-action image
+  ---
+  duration_ms: 1.692654
+  type: 'test'
+  ...
+# Subtest: several separate clicks may reference the same stable state
+ok 36 - several separate clicks may reference the same stable state
+  ---
+  duration_ms: 0.233676
+  type: 'test'
+  ...
+# Subtest: only four frames are retained
+ok 37 - only four frames are retained
+  ---
+  duration_ms: 0.277497
+  type: 'test'
+  ...
+# Subtest: oversized frames are not retained
+ok 38 - oversized frames are not retained
+  ---
+  duration_ms: 0.166021
+  type: 'test'
+  ...
+# Subtest: combined memory budget evicts older entries
+ok 39 - combined memory budget evicts older entries
+  ---
+  duration_ms: 0.181362
+  type: 'test'
+  ...
+# Subtest: toolbar-visible images cannot enter the buffer
+ok 40 - toolbar-visible images cannot enter the buffer
+  ---
+  duration_ms: 0.131546
+  type: 'test'
+  ...
+# Subtest: clearing the buffer releases every retained frame
+ok 41 - clearing the buffer releases every retained frame
+  ---
+  duration_ms: 0.136075
+  type: 'test'
+  ...
+# Subtest: clamp keeps values within both bounds
+ok 42 - clamp keeps values within both bounds
+  ---
+  duration_ms: 2.902934
+  type: 'test'
+  ...
+# Subtest: dragging backwards produces a positive rectangle
+ok 43 - dragging backwards produces a positive rectangle
+  ---
+  duration_ms: 1.269763
+  type: 'test'
+  ...
+# Subtest: dragging beyond the image clips coordinates
+ok 44 - dragging beyond the image clips coordinates
+  ---
+  duration_ms: 0.204336
+  type: 'test'
+  ...
+# Subtest: normalize a CSS rectangle
+ok 45 - normalize a CSS rectangle
+  ---
+  duration_ms: 0.3294
+  type: 'test'
+  ...
+# Subtest: normalize partially offscreen form fields
+ok 46 - normalize partially offscreen form fields
+  ---
+  duration_ms: 0.250097
+  type: 'test'
+  ...
+# Subtest: ignore fully offscreen fields
+ok 47 - ignore fully offscreen fields
+  ---
+  duration_ms: 0.175541
+  type: 'test'
+  ...
+# Subtest: ignore empty viewports
+ok 48 - ignore empty viewports
+  ---
+  duration_ms: 0.152644
+  type: 'test'
+  ...
+# Subtest: redaction rounds outward, never inward
+ok 49 - redaction rounds outward, never inward
+  ---
+  duration_ms: 0.212986
+  type: 'test'
+  ...
+# Subtest: sameViewport detects scrolling
+ok 50 - sameViewport detects scrolling
+  ---
+  duration_ms: 0.484172
+  type: 'test'
+  ...
+# Subtest: sameViewport detects resizing
+ok 51 - sameViewport detects resizing
+  ---
+  duration_ms: 0.604361
+  type: 'test'
+  ...
+# Subtest: crop translates remaining annotations
+ok 52 - crop translates remaining annotations
+  ---
+  duration_ms: 0.416427
+  type: 'test'
+  ...
+# Subtest: crop removes annotations outside the new image
+ok 53 - crop removes annotations outside the new image
+  ---
+  duration_ms: 0.21857
+  type: 'test'
+  ...
+# Subtest: crop clips partially visible annotations
+ok 54 - crop clips partially visible annotations
+  ---
+  duration_ms: 0.158501
+  type: 'test'
+  ...
+# Subtest: empty crop yields no annotations
+ok 55 - empty crop yields no annotations
+  ---
+  duration_ms: 0.747506
+  type: 'test'
+  ...
+# Subtest: embedded PNG bytes roundtrip without text encoding damage
+ok 56 - embedded PNG bytes roundtrip without text encoding damage
+  ---
+  duration_ms: 3.109106
+  type: 'test'
+  ...
+# Subtest: JPEG data URLs retain their declared type for container inspection
+ok 57 - JPEG data URLs retain their declared type for container inspection
+  ---
+  duration_ms: 0.411072
+  type: 'test'
+  ...
+# Subtest: remote image URLs are not accepted as embedded image data
+ok 58 - remote image URLs are not accepted as embedded image data
+  ---
+  duration_ms: 0.722919
+  type: 'test'
+  ...
+# Subtest: SVG data URLs are rejected even when base64 encoded
+ok 59 - SVG data URLs are rejected even when base64 encoded
+  ---
+  duration_ms: 0.226342
+  type: 'test'
+  ...
+# Subtest: a data URL cannot contain trailing markup
+ok 60 - a data URL cannot contain trailing markup
+  ---
+  duration_ms: 0.276105
+  type: 'test'
+  ...
+# Subtest: zero-byte uploads fail before any browser decoding
+ok 61 - zero-byte uploads fail before any browser decoding
+  ---
+  duration_ms: 1.259293
+  type: 'test'
+  ...
+# Subtest: oversized uploads fail before any browser decoding
+ok 62 - oversized uploads fail before any browser decoding
+  ---
+  duration_ms: 12.325499
+  type: 'test'
+  ...
+# Subtest: an image MIME label does not make executable SVG a PNG
+ok 63 - an image MIME label does not make executable SVG a PNG
+  ---
+  duration_ms: 0.391342
+  type: 'test'
+  ...
+# Subtest: PNG dimensions are bounded before decompression
+ok 64 - PNG dimensions are bounded before decompression
+  ---
+  duration_ms: 0.677405
+  type: 'test'
+  ...
+# Subtest: zero-width PNG headers are rejected before decoding
+ok 65 - zero-width PNG headers are rejected before decoding
+  ---
+  duration_ms: 1.029715
+  type: 'test'
+  ...
+# Subtest: a PNG without its required first header chunk is rejected
+ok 66 - a PNG without its required first header chunk is rejected
+  ---
+  duration_ms: 0.621547
+  type: 'test'
+  ...
+# Subtest: truncated JPEG data is rejected instead of passed to the decoder
+ok 67 - truncated JPEG data is rejected instead of passed to the decoder
+  ---
+  duration_ms: 3.417231
+  type: 'test'
+  ...
+# Subtest: guides start as local drafts with unique IDs
+ok 68 - guides start as local drafts with unique IDs
+  ---
+  duration_ms: 4.973508
+  type: 'test'
+  ...
+# Subtest: adding a step does not mutate the original guide
+ok 69 - adding a step does not mutate the original guide
+  ---
+  duration_ms: 0.346689
+  type: 'test'
+  ...
+# Subtest: new step is inserted after the selected step
+ok 70 - new step is inserted after the selected step
+  ---
+  duration_ms: 0.565948
+  type: 'test'
+  ...
+# Subtest: adding more than the documented step limit fails
+ok 71 - adding more than the documented step limit fails
+  ---
+  duration_ms: 4.51544
+  type: 'test'
+  ...
+# Subtest: reordering preserves step IDs and content
+ok 72 - reordering preserves step IDs and content
+  ---
+  duration_ms: 0.379196
+  type: 'test'
+  ...
+# Subtest: reordering at the edge is a no-op
+ok 73 - reordering at the edge is a no-op
+  ---
+  duration_ms: 0.197303
+  type: 'test'
+  ...
+# Subtest: editing resets reviewed status without touching other steps
+ok 74 - editing resets reviewed status without touching other steps
+  ---
+  duration_ms: 0.209646
+  type: 'test'
+  ...
+# Subtest: removing a step does not mutate the source array
+ok 75 - removing a step does not mutate the source array
+  ---
+  duration_ms: 0.240737
+  type: 'test'
+  ...
+# Subtest: queue serializes asynchronous writes
+ok 76 - queue serializes asynchronous writes
+  ---
+  duration_ms: 10.493265
+  type: 'test'
+  ...
+# Subtest: a rejected operation does not poison the queue
+ok 77 - a rejected operation does not poison the queue
+  ---
+  duration_ms: 0.953849
+  type: 'test'
+  ...
+# (node:8383) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: starting a recording creates an independent local draft
+ok 78 - starting a recording creates an independent local draft
+  ---
+  duration_ms: 5.935961
+  type: 'test'
+  ...
+# Subtest: starting a second recording is rejected
+ok 79 - starting a second recording is rejected
+  ---
+  duration_ms: 1.182279
+  type: 'test'
+  ...
+# Subtest: browser pages cannot be recorded
+ok 80 - browser pages cannot be recorded
+  ---
+  duration_ms: 0.335081
+  type: 'test'
+  ...
+# Subtest: incognito tabs cannot be recorded
+ok 81 - incognito tabs cannot be recorded
+  ---
+  duration_ms: 0.344236
+  type: 'test'
+  ...
+# Subtest: split-view tabs cannot be recorded
+ok 82 - split-view tabs cannot be recorded
+  ---
+  duration_ms: 0.893404
+  type: 'test'
+  ...
+# Subtest: extension stores cannot be recorded
+ok 83 - extension stores cannot be recorded
+  ---
+  duration_ms: 0.305549
+  type: 'test'
+  ...
+# Subtest: failed permission leaves a draft but no active session
+ok 84 - failed permission leaves a draft but no active session
+  ---
+  duration_ms: 0.681533
+  type: 'test'
+  ...
+# Subtest: a click stores a screenshot and a caption without page input values
+ok 85 - a click stores a screenshot and a caption without page input values
+  ---
+  duration_ms: 3.655736
+  type: 'test'
+  ...
+# Subtest: protected regions from before and after capture are both rasterized
+ok 86 - protected regions from before and after capture are both rasterized
+  ---
+  duration_ms: 1.572943
+  type: 'test'
+  ...
+# Subtest: a target that moved during capture is not misleadingly highlighted
+ok 87 - a target that moved during capture is not misleadingly highlighted
+  ---
+  duration_ms: 1.842169
+  type: 'test'
+  ...
+# Subtest: rapid clicks on the same verified state can share a frame without a new capture
+ok 88 - rapid clicks on the same verified state can share a frame without a new capture
+  ---
+  duration_ms: 1.582541
+  type: 'test'
+  ...
+# Subtest: failed privacy scanning stores no screenshot
+ok 89 - failed privacy scanning stores no screenshot
+  ---
+  duration_ms: 0.650606
+  type: 'test'
+  ...
+# Subtest: navigation during capture cannot save a different document
+ok 90 - navigation during capture cannot save a different document
+  ---
+  duration_ms: 0.721299
+  type: 'test'
+  ...
+# Subtest: scrolling during capture discards the raster
+ok 91 - scrolling during capture discards the raster
+  ---
+  duration_ms: 2.55657
+  type: 'test'
+  ...
+# Subtest: switching active tabs during capture discards the raster
+ok 92 - switching active tabs during capture discards the raster
+  ---
+  duration_ms: 0.834982
+  type: 'test'
+  ...
+# Subtest: capture API failure is surfaced as a missing-image warning
+ok 93 - capture API failure is surfaced as a missing-image warning
+  ---
+  duration_ms: 1.165063
+  type: 'test'
+  ...
+# Subtest: actions from older documents are rejected
+ok 94 - actions from older documents are rejected
+  ---
+  duration_ms: 0.444713
+  type: 'test'
+  ...
+# Subtest: paused sessions do not accept recorded actions
+ok 95 - paused sessions do not accept recorded actions
+  ---
+  duration_ms: 0.325971
+  type: 'test'
+  ...
+# Subtest: paused sessions can resume after an explicit command
+ok 96 - paused sessions can resume after an explicit command
+  ---
+  duration_ms: 0.432359
+  type: 'test'
+  ...
+# Subtest: domain changes continue the same recording without a new permission request
+ok 97 - domain changes continue the same recording without a new permission request
+  ---
+  duration_ms: 1.228348
+  type: 'test'
+  ...
+# Subtest: storage failure pauses instead of silently losing a step
+ok 98 - storage failure pauses instead of silently losing a step
+  ---
+  duration_ms: 0.537756
+  type: 'test'
+  ...
+# Subtest: stopping clears the session and opens the saved guide
+ok 99 - stopping clears the session and opens the saved guide
+  ---
+  duration_ms: 0.633401
+  type: 'test'
+  ...
+# Subtest: closing a tab can stop without opening another tab
+ok 100 - closing a tab can stop without opening another tab
+  ---
+  duration_ms: 0.416639
+  type: 'test'
+  ...
+# Subtest: startup clearing does not erase already stored drafts
+ok 101 - startup clearing does not erase already stored drafts
+  ---
+  duration_ms: 4.31681
+  type: 'test'
+  ...
+# Subtest: trusted extension views can query state
+ok 102 - trusted extension views can query state
+  ---
+  duration_ms: 0.545902
+  type: 'test'
+  ...
+# Subtest: untrusted web pages cannot invoke recording controls
+ok 103 - untrusted web pages cannot invoke recording controls
+  ---
+  duration_ms: 0.288425
+  type: 'test'
+  ...
+# Subtest: other extensions cannot invoke recording controls
+ok 104 - other extensions cannot invoke recording controls
+  ---
+  duration_ms: 0.132827
+  type: 'test'
+  ...
+# Subtest: top-frame recorder messages require the document token
+ok 105 - top-frame recorder messages require the document token
+  ---
+  duration_ms: 0.306508
+  type: 'test'
+  ...
+# Subtest: child frames cannot invoke recording controls
+ok 106 - child frames cannot invoke recording controls
+  ---
+  duration_ms: 0.495073
+  type: 'test'
+  ...
+# Subtest: unknown commands fail without performing any operation
+ok 107 - unknown commands fail without performing any operation
+  ---
+  duration_ms: 0.164833
+  type: 'test'
+  ...
+# Subtest: missing all-sites access prevents starting before any draft is created
+ok 108 - missing all-sites access prevents starting before any draft is created
+  ---
+  duration_ms: 0.168615
+  type: 'test'
+  ...
+# Subtest: permission requests are explicit and do not start a recording
+ok 109 - permission requests are explicit and do not start a recording
+  ---
+  duration_ms: 0.17425
+  type: 'test'
+  ...
+# Subtest: declining access does not create a guide or a session
+ok 110 - declining access does not create a guide or a session
+  ---
+  duration_ms: 0.12571
+  type: 'test'
+  ...
+# Subtest: missing access cannot be worked around by resuming from a toolbar
+ok 111 - missing access cannot be worked around by resuming from a toolbar
+  ---
+  duration_ms: 0.344534
+  type: 'test'
+  ...
+# Subtest: revoking access blocks the next capture and pauses before creating a step
+ok 112 - revoking access blocks the next capture and pauses before creating a step
+  ---
+  duration_ms: 0.327354
+  type: 'test'
+  ...
+# Subtest: permission removal events pause the real worker state
+ok 113 - permission removal events pause the real worker state
+  ---
+  duration_ms: 0.543429
+  type: 'test'
+  ...
+# Subtest: unrelated permission events do not interrupt all-sites recording
+ok 114 - unrelated permission events do not interrupt all-sites recording
+  ---
+  duration_ms: 0.411577
+  type: 'test'
+  ...
+# Subtest: restoring access does not automatically resume a paused session
+ok 115 - restoring access does not automatically resume a paused session
+  ---
+  duration_ms: 0.41506
+  type: 'test'
+  ...
+# Subtest: navigation without a running session never injects the recorder
+ok 116 - navigation without a running session never injects the recorder
+  ---
+  duration_ms: 0.135724
+  type: 'test'
+  ...
+# Subtest: unrelated tabs and non-navigation updates do not reconnect a session
+ok 117 - unrelated tabs and non-navigation updates do not reconnect a session
+  ---
+  duration_ms: 0.226111
+  type: 'test'
+  ...
+# Subtest: a loading document invalidates old tokens without requiring new consent
+ok 118 - a loading document invalidates old tokens without requiring new consent
+  ---
+  duration_ms: 0.315343
+  type: 'test'
+  ...
+# Subtest: same-origin reloads invalidate the old document and then reconnect
+ok 119 - same-origin reloads invalidate the old document and then reconnect
+  ---
+  duration_ms: 0.883017
+  type: 'test'
+  ...
+# Subtest: same-document URL updates do not replace the recorder token
+ok 120 - same-document URL updates do not replace the recorder token
+  ---
+  duration_ms: 0.818273
+  type: 'test'
+  ...
+# Subtest: redirects connect the current final URL, not a queued event URL
+ok 121 - redirects connect the current final URL, not a queued event URL
+  ---
+  duration_ms: 0.822257
+  type: 'test'
+  ...
+# Subtest: a queued completion event cannot inject into a newer loading page
+ok 122 - a queued completion event cannot inject into a newer loading page
+  ---
+  duration_ms: 0.855705
+  type: 'test'
+  ...
+# Subtest: manual pauses remain paused across domain changes
+ok 123 - manual pauses remain paused across domain changes
+  ---
+  duration_ms: 0.99437
+  type: 'test'
+  ...
+# Subtest: blocked pages do not get an injected recorder even with all-sites access
+ok 124 - blocked pages do not get an injected recorder even with all-sites access
+  ---
+  duration_ms: 0.852054
+  type: 'test'
+  ...
+# Subtest: background navigation cannot resume or continue recording an inactive tab
+ok 125 - background navigation cannot resume or continue recording an inactive tab
+  ---
+  duration_ms: 0.505314
+  type: 'test'
+  ...
+# Subtest: navigation in an unfocused window is paused before connecting
+ok 126 - navigation in an unfocused window is paused before connecting
+  ---
+  duration_ms: 0.614566
+  type: 'test'
+  ...
+# Subtest: navigation with withheld access shows the persistent access instruction
+ok 127 - navigation with withheld access shows the persistent access instruction
+  ---
+  duration_ms: 0.580421
+  type: 'test'
+  ...
+# Subtest: a failed reconnect does not misleadingly claim a domain needs fresh consent
+ok 128 - a failed reconnect does not misleadingly claim a domain needs fresh consent
+  ---
+  duration_ms: 0.444278
+  type: 'test'
+  ...
+# Subtest: the connection handshake cannot bind a token from a different origin
+ok 129 - the connection handshake cannot bind a token from a different origin
+  ---
+  duration_ms: 0.409752
+  type: 'test'
+  ...
+# Subtest: new-origin recorder messages are authorized after reconnecting
+ok 130 - new-origin recorder messages are authorized after reconnecting
+  ---
+  duration_ms: 1.139669
+  type: 'test'
+  ...
+# Subtest: previous-origin recorder messages are rejected after reconnecting
+ok 131 - previous-origin recorder messages are rejected after reconnecting
+  ---
+  duration_ms: 0.931183
+  type: 'test'
+  ...
+# Subtest: navigation tokens cannot be forged as an empty document token
+ok 132 - navigation tokens cannot be forged as an empty document token
+  ---
+  duration_ms: 0.3672
+  type: 'test'
+  ...
+# Subtest: an automatic click never captures the page after the action
+ok 133 - an automatic click never captures the page after the action
+  ---
+  duration_ms: 0.919633
+  type: 'test'
+  ...
+# Subtest: a new DOM revision cannot reuse a previous frame
+ok 134 - a new DOM revision cannot reuse a previous frame
+  ---
+  duration_ms: 1.153959
+  type: 'test'
+  ...
+# Subtest: duplicate deliveries do not append the same action twice
+ok 135 - duplicate deliveries do not append the same action twice
+  ---
+  duration_ms: 1.595798
+  type: 'test'
+  ...
+# Subtest: capture requests inside the rate interval get a retry time, not an empty step
+ok 136 - capture requests inside the rate interval get a retry time, not an empty step
+  ---
+  duration_ms: 1.14213
+  type: 'test'
+  ...
+# Subtest: manual screenshots wait for their turn instead of dropping the image
+ok 137 - manual screenshots wait for their turn instead of dropping the image
+  ---
+  duration_ms: 652.338757
+  type: 'test'
+  ...
+# Subtest: visible toolbar makes pre-capture fail closed
+ok 138 - visible toolbar makes pre-capture fail closed
+  ---
+  duration_ms: 0.504039
+  type: 'test'
+  ...
+# Subtest: DOM mutation makes pre-capture fail closed
+ok 139 - DOM mutation makes pre-capture fail closed
+  ---
+  duration_ms: 0.31421
+  type: 'test'
+  ...
+# Subtest: user input during raster capture makes pre-capture fail closed
+ok 140 - user input during raster capture makes pre-capture fail closed
+  ---
+  duration_ms: 0.255648
+  type: 'test'
+  ...
+# Subtest: prepare and restore share a unique capture lease
+ok 141 - prepare and restore share a unique capture lease
+  ---
+  duration_ms: 0.477003
+  type: 'test'
+  ...
+# Subtest: pending old-document click can retain its already captured source image after navigation
+ok 142 - pending old-document click can retain its already captured source image after navigation
+  ---
+  duration_ms: 0.765319
+  type: 'test'
+  ...
+# Subtest: a forged action timestamp cannot revive a retired document
+ok 143 - a forged action timestamp cannot revive a retired document
+  ---
+  duration_ms: 0.406701
+  type: 'test'
+  ...
+# Subtest: a browser-restored document is reauthenticated on history return
+ok 144 - a browser-restored document is reauthenticated on history return
+  ---
+  duration_ms: 0.464302
+  type: 'test'
+  ...
+# Subtest: stopping removes previous-document authority as well as buffered frames
+ok 145 - stopping removes previous-document authority as well as buffered frames
+  ---
+  duration_ms: 0.445674
+  type: 'test'
+  ...
+# Subtest: a different browser document cannot impersonate a recording document
+ok 146 - a different browser document cannot impersonate a recording document
+  ---
+  duration_ms: 0.272057
+  type: 'test'
+  ...
+# Subtest: current document authorization survives a worker-local cache reset
+ok 147 - current document authorization survives a worker-local cache reset
+  ---
+  duration_ms: 0.297016
+  type: 'test'
+  ...
+# Subtest: labels remove whitespace and directional override characters
+ok 148 - labels remove whitespace and directional override characters
+  ---
+  duration_ms: 1.715724
+  type: 'test'
+  ...
+# Subtest: labels have a bounded size
+ok 149 - labels have a bounded size
+  ---
+  duration_ms: 0.384646
+  type: 'test'
+  ...
+# Subtest: input descriptions never require an input value
+ok 150 - input descriptions never require an input value
+  ---
+  duration_ms: 0.228202
+  type: 'test'
+  ...
+# Subtest: missing labels use a neutral fallback
+ok 151 - missing labels use a neutral fallback
+  ---
+  duration_ms: 0.152051
+  type: 'test'
+  ...
+# Subtest: manual screenshots have a neutral description
+ok 152 - manual screenshots have a neutral description
+  ---
+  duration_ms: 0.206922
+  type: 'test'
+  ...
+# Subtest: English click labels are generated
+ok 153 - English click labels are generated
+  ---
+  duration_ms: 0.176253
+  type: 'test'
+  ...
+# Subtest: origins strip credentials, path, query and fragment
+ok 154 - origins strip credentials, path, query and fragment
+  ---
+  duration_ms: 0.211406
+  type: 'test'
+  ...
+# Subtest: origins preserve a nondefault port
+ok 155 - origins preserve a nondefault port
+  ---
+  duration_ms: 0.256053
+  type: 'test'
+  ...
+# Subtest: reject unsafe origin javascript
+ok 156 - reject unsafe origin javascript
+  ---
+  duration_ms: 0.433207
+  type: 'test'
+  ...
+# Subtest: reject unsafe origin file
+ok 157 - reject unsafe origin file
+  ---
+  duration_ms: 0.976305
+  type: 'test'
+  ...
+# Subtest: reject unsafe origin data
+ok 158 - reject unsafe origin data
+  ---
+  duration_ms: 0.689527
+  type: 'test'
+  ...
+# Subtest: reject unsafe origin chrome
+ok 159 - reject unsafe origin chrome
+  ---
+  duration_ms: 0.12769
+  type: 'test'
+  ...
+# Subtest: reject unsafe origin not-a-url
+ok 160 - reject unsafe origin not-a-url
+  ---
+  duration_ms: 0.190724
+  type: 'test'
+  ...
+# Subtest: HTML escapes both quotes and markup
+ok 161 - HTML escapes both quotes and markup
+  ---
+  duration_ms: 0.224936
+  type: 'test'
+  ...
+# Subtest: Markdown escapes markup and link syntax
+ok 162 - Markdown escapes markup and link syntax
+  ---
+  duration_ms: 0.263327
+  type: 'test'
+  ...
+# Subtest: filenames remove slashes and normalize accents
+ok 163 - filenames remove slashes and normalize accents
+  ---
+  duration_ms: 0.506676
+  type: 'test'
+  ...
+# Subtest: Windows device names never become export filenames
+ok 164 - Windows device names never become export filenames
+  ---
+  duration_ms: 0.201272
+  type: 'test'
+  ...
+# Subtest: empty filenames have a useful fallback
+ok 165 - empty filenames have a useful fallback
+  ---
+  duration_ms: 0.138869
+  type: 'test'
+  ...
+# Subtest: filenames remain bounded
+ok 166 - filenames remain bounded
+  ---
+  duration_ms: 0.112136
+  type: 'test'
+  ...
+# Subtest: storage sizes are human-readable
+ok 167 - storage sizes are human-readable
+  ---
+  duration_ms: 6.491046
+  type: 'test'
+  ...
+# Subtest: valid guide survives schema validation
+ok 168 - valid guide survives schema validation
+  ---
+  duration_ms: 7.483028
+  type: 'test'
+  ...
+# Subtest: unknown guide fields are stripped
+ok 169 - unknown guide fields are stripped
+  ---
+  duration_ms: 0.534372
+  type: 'test'
+  ...
+# Subtest: duplicate step IDs are rejected
+ok 170 - duplicate step IDs are rejected
+  ---
+  duration_ms: 1.064565
+  type: 'test'
+  ...
+# Subtest: shared image IDs are rejected
+ok 171 - shared image IDs are rejected
+  ---
+  duration_ms: 0.361958
+  type: 'test'
+  ...
+# Subtest: invalid status values are rejected
+ok 172 - invalid status values are rejected
+  ---
+  duration_ms: 0.340451
+  type: 'test'
+  ...
+# Subtest: invalid colors cannot reach exported CSS
+ok 173 - invalid colors cannot reach exported CSS
+  ---
+  duration_ms: 0.271978
+  type: 'test'
+  ...
+# Subtest: empty and invalid IDs are rejected
+ok 174 - empty and invalid IDs are rejected
+  ---
+  duration_ms: 0.448426
+  type: 'test'
+  ...
+# Subtest: long bodies and too many tags are rejected
+ok 175 - long bodies and too many tags are rejected
+  ---
+  duration_ms: 0.45725
+  type: 'test'
+  ...
+# Subtest: fractional revisions are rejected
+ok 176 - fractional revisions are rejected
+  ---
+  duration_ms: 0.589137
+  type: 'test'
+  ...
+# Subtest: full URLs are rejected in step origins
+ok 177 - full URLs are rejected in step origins
+  ---
+  duration_ms: 0.702977
+  type: 'test'
+  ...
+# Subtest: out-of-image rectangles are rejected
+ok 178 - out-of-image rectangles are rejected
+  ---
+  duration_ms: 0.342772
+  type: 'test'
+  ...
+# Subtest: NaN and infinite coordinates are rejected
+ok 179 - NaN and infinite coordinates are rejected
+  ---
+  duration_ms: 0.135803
+  type: 'test'
+  ...
+# Subtest: capture messages are validated and stripped
+ok 180 - capture messages are validated and stripped
+  ---
+  duration_ms: 0.232951
+  type: 'test'
+  ...
+# Subtest: unknown action types are rejected
+ok 181 - unknown action types are rejected
+  ---
+  duration_ms: 0.085674
+  type: 'test'
+  ...
+# Subtest: invalid capture viewports are rejected
+ok 182 - invalid capture viewports are rejected
+  ---
+  duration_ms: 0.073483
+  type: 'test'
+  ...
+# Subtest: capture snapshots validate domain and redaction bounds
+ok 183 - capture snapshots validate domain and redaction bounds
+  ---
+  duration_ms: 0.335141
+  type: 'test'
+  ...
+# Subtest: too many redaction areas fail closed
+ok 184 - too many redaction areas fail closed
+  ---
+  duration_ms: 0.158249
+  type: 'test'
+  ...
+# Subtest: valid backup is accepted
+ok 185 - valid backup is accepted
+  ---
+  duration_ms: 0.616973
+  type: 'test'
+  ...
+# Subtest: future backup versions are not silently accepted
+ok 186 - future backup versions are not silently accepted
+  ---
+  duration_ms: 0.24702
+  type: 'test'
+  ...
+# Subtest: malformed JSON cannot be imported
+ok 187 - malformed JSON cannot be imported
+  ---
+  duration_ms: 0.164867
+  type: 'test'
+  ...
+# Subtest: remote screenshot URLs are rejected
+ok 188 - remote screenshot URLs are rejected
+  ---
+  duration_ms: 0.510478
+  type: 'test'
+  ...
+# Subtest: SVG image data is rejected even when embedded
+ok 189 - SVG image data is rejected even when embedded
+  ---
+  duration_ms: 0.196371
+  type: 'test'
+  ...
+# Subtest: duplicate archive images are rejected
+ok 190 - duplicate archive images are rejected
+  ---
+  duration_ms: 0.165026
+  type: 'test'
+  ...
+# Subtest: missing archive images are rejected
+ok 191 - missing archive images are rejected
+  ---
+  duration_ms: 0.194753
+  type: 'test'
+  ...
+# Subtest: orphan images are rejected
+ok 192 - orphan images are rejected
+  ---
+  duration_ms: 0.976897
+  type: 'test'
+  ...
+# Subtest: prototype keys do not enter the reconstructed guide
+ok 193 - prototype keys do not enter the reconstructed guide
+  ---
+  duration_ms: 0.426978
+  type: 'test'
+  ...
+# Subtest: valid privacy settings are preserved
+ok 194 - valid privacy settings are preserved
+  ---
+  duration_ms: 0.149938
+  type: 'test'
+  ...
+# Subtest: broken stored settings fall back to conservative defaults
+ok 195 - broken stored settings fall back to conservative defaults
+  ---
+  duration_ms: 0.093569
+  type: 'test'
+  ...
+# Subtest: selector limits are enforced
+ok 196 - selector limits are enforced
+  ---
+  duration_ms: 0.072841
+  type: 'test'
+  ...
+# Subtest: invalid capture identity or revision is rejected {"stateRevision":-1}
+ok 197 - invalid capture identity or revision is rejected {"stateRevision":-1}
+  ---
+  duration_ms: 0.080841
+  type: 'test'
+  ...
+# Subtest: invalid capture identity or revision is rejected {"stateRevision":1.5}
+ok 198 - invalid capture identity or revision is rejected {"stateRevision":1.5}
+  ---
+  duration_ms: 0.062313
+  type: 'test'
+  ...
+# Subtest: invalid capture identity or revision is rejected {"stateRevision":null}
+ok 199 - invalid capture identity or revision is rejected {"stateRevision":null}
+  ---
+  duration_ms: 0.04162
+  type: 'test'
+  ...
+# Subtest: invalid capture identity or revision is rejected {"observedAt":null}
+ok 200 - invalid capture identity or revision is rejected {"observedAt":null}
+  ---
+  duration_ms: 0.046831
+  type: 'test'
+  ...
+# Subtest: invalid capture identity or revision is rejected {"eventId":""}
+ok 201 - invalid capture identity or revision is rejected {"eventId":""}
+  ---
+  duration_ms: 0.043963
+  type: 'test'
+  ...
+# Subtest: invalid capture identity or revision is rejected {"eventId":"../bad"}
+ok 202 - invalid capture identity or revision is rejected {"eventId":"../bad"}
+  ---
+  duration_ms: 0.039818
+  type: 'test'
+  ...
+# Subtest: capture snapshot must explicitly report toolbar visibility and input revision
+ok 203 - capture snapshot must explicitly report toolbar visibility and input revision
+  ---
+  duration_ms: 0.13639
+  type: 'test'
+  ...
+# Subtest: duplicate target identities are rejected before caching
+ok 204 - duplicate target identities are rejected before caching
+  ---
+  duration_ms: 0.11319
+  type: 'test'
+  ...
+1..204
+# tests 204
+# suites 0
+# pass 204
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1005.181784
+Static release checks passed: 40 files, declared all-sites access, local imports, strict types, no network sinks.
+Created release/klickguide-1.0.2-chrome.zip (205880 bytes)
+SHA-256 2fe2d046084ff23881fdf4df9e4700c5f638b1368e20832ed6a52fcb1a69d21e

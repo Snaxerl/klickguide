@@ -1,0 +1,10 @@
+KlickGuide 1.0.2 release verification
+Chrome ZIP CRC/integrity: PASS
+Chrome ZIP entries: 40
+Chrome ZIP -> dist file-by-file comparison: PASS
+Source ZIP CRC/integrity: PASS
+Extracted source rebuilt with TypeScript 5.8.3: PASS
+Rebuilt dist -> released dist byte-for-byte comparison: PASS
+Extracted static release checks: PASS
+Source excludes dependencies, local symlinks, caches and private screenshots.
+No fresh npm registry install was verified by this reproduction.

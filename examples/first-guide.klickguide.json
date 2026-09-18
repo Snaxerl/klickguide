@@ -1,0 +1,55 @@
+{
+  "format": "klickguide",
+  "version": 1,
+  "guide": {
+    "id": "example-first-guide",
+    "title": "Deine erste Anleitung",
+    "description": "Ein kleines importierbares Beispiel. Ohne Bilder, ohne echte Daten und vollständig bearbeitbar.",
+    "author": "",
+    "tags": [
+      "Beispiel"
+    ],
+    "status": "draft",
+    "language": "de",
+    "accent": "#5144d8",
+    "createdAt": 1789718400000,
+    "updatedAt": 1789718400000,
+    "revision": 0,
+    "steps": [
+      {
+        "id": "example-step-1",
+        "kind": "note",
+        "title": "Eine Anleitung anlegen",
+        "body": "Öffne die Bibliothek und wähle „Neue Anleitung“. Gib deinem Ablauf einen verständlichen Titel.",
+        "origin": "",
+        "warning": "",
+        "createdAt": 1789718400000,
+        "imageId": null,
+        "annotations": []
+      },
+      {
+        "id": "example-step-2",
+        "kind": "note",
+        "title": "Schritte verständlich beschreiben",
+        "body": "Ergänze pro Schritt eine konkrete Handlung. Du kannst ein eigenes PNG- oder JPEG-Bild hochladen und es markieren, zuschneiden oder schwärzen.",
+        "origin": "",
+        "warning": "",
+        "createdAt": 1789718400000,
+        "imageId": null,
+        "annotations": []
+      },
+      {
+        "id": "example-step-3",
+        "kind": "note",
+        "title": "Prüfen und weitergeben",
+        "body": "Speichere deine Änderungen. Öffne „Prüfen & exportieren“, prüfe alle Inhalte und wähle das passende Format. Sichere wichtige Anleitungen zusätzlich als Projektsicherung.",
+        "origin": "",
+        "warning": "",
+        "createdAt": 1789718400000,
+        "imageId": null,
+        "annotations": []
+      }
+    ]
+  },
+  "images": []
+}

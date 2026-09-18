@@ -1,0 +1,42 @@
+KlickGuide 1.0.3
+
+NEUE INSTALLATION
+1. Diesen Ordner vollständig entpacken und dauerhaft aufbewahren.
+2. In Chrome chrome://extensions öffnen und Entwicklermodus aktivieren.
+3. "Entpackte Erweiterung laden" wählen.
+4. Genau diesen Ordner auswählen. Er enthält manifest.json direkt.
+5. Details > Websitezugriff > Auf allen Websites einstellen.
+6. KlickGuide anheften und auf einer normalen Webseite öffnen.
+
+UPDATE VON 1.0.0 ODER 1.0.1
+1. Aufnahme beenden, Editoränderungen speichern und Projekte sichern.
+2. Dateien in den BISHERIGEN Installationsordner kopieren und ersetzen.
+   manifest.json muss am bisherigen Pfad bleiben, nicht in einem Unterordner.
+3. In chrome://extensions KlickGuide neu laden. Version 1.0.3 prüfen.
+4. Websitezugriff "Auf allen Websites" prüfen.
+5. Die Webseite mit F5 neu laden und eine neue Aufnahme starten.
+Nicht deinstallieren oder ungesichert einen anderen Ordner auswählen.
+Im vollständigen Projekt ist der Installationsordner klickguide/dist.
+Die Datenbank und das Sicherungsformat bleiben unverändert.
+
+AUFNEHMEN
+Vor dem ersten Klick und nach neuen Seiten/Ansichten auf "Bild bereit" warten.
+Automatische Klickschritte erhalten ein geprüftes Bild VOR der Aktion.
+Ein manueller Screenshot nimmt bewusst den AKTUELLEN Zustand auf.
+Fehlt ein passendes Vorher-Bild, erscheint ein Hinweis statt der Folgeseite.
+Alte fehlerhafte oder fehlende Bilder werden nicht automatisch repariert.
+Die Aufnahmeleiste wird vor Screenshots ausgeblendet und geprüft.
+
+GRENZEN
+Normale Domainwechsel setzen im gleichen Tab fort. Andere Tabs werden nicht
+mitaufgenommen. Manuelle Pausen bleiben erhalten. Browserseiten, Stores,
+file://, Inkognito und erkannte geteilte Tabs bleiben ausgeschlossen.
+Animationen und sehr schnelle Zustandswechsel können weiterhin Bilder kosten.
+Kein Server, Konto oder API-Schlüssel. Kein Video oder künstliches Klick-Replay.
+Automatische Schwärzung ist standardmäßig ausgeschaltet und kann bei Bedarf in den Einstellungen aktiviert werden.
+
+PRÜFSTAND
+204 Node-Tests, 13 echte Chromium-DOM-/Pixel-/Layouttests mit Testtransport,
+Typprüfung und statische Release-Prüfungen bestanden. Native installierte
+Erweiterungsintegration bleibt wegen gesperrter Testinstallation unbestätigt.
+Details und Testbefehle stehen in der Dokumentation des Quellcodepakets.
