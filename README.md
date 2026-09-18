@@ -22,21 +22,6 @@ Kein Konto. Kein Backend. Keine KI-Dienste. Keine Laufzeit-Abhängigkeiten.
 | Export | Eigenständiges HTML, Markdown mit PNGs als ZIP, editierbare Projektsicherung und Druckansicht für PDF. |
 | Datenintegrität | Atomare IndexedDB-Transaktionen, Versionsprüfung bei parallelem Bearbeiten, validierter Import mit neuen IDs. |
 
-## Direkt installieren
-
-Mit dem Quellcode-Paket wird der fertige Ordner **`dist/`** ausgeliefert. Zur Verwendung ist weder Node.js noch ein Server notwendig. Bei einem Git-Clone ist `dist/` nicht eingecheckt; dafür zuerst die unten beschriebenen Build-Befehle ausführen.
-
-1. Das vollständige ZIP in einen dauerhaften Ordner entpacken.
-2. In Chrome `chrome://extensions` öffnen und **Entwicklermodus** aktivieren.
-3. **Entpackte Erweiterung laden** wählen und den Ordner **`dist`** auswählen.
-4. Unter **Details → Websitezugriff** die Einstellung **Auf allen Websites** prüfen und eine eventuell angezeigte Berechtigungsabfrage bestätigen.
-5. KlickGuide über das Erweiterungsmenü anheften und auf einer normalen Webseite öffnen.
-
-Beim separaten `klickguide-1.0.2-chrome.zip` liegt `manifest.json` direkt im entpackten Ordner. In diesem Fall genau diesen Ordner auswählen, nicht einen zusätzlichen `dist`-Unterordner.
-
-Die Installation ist eine lokale Entwicklerinstallation, keine Veröffentlichung im Chrome Web Store. Die Manifest-Untergrenze ist Chrome 120; damit wird keine getestete Kompatibilität mit sämtlichen Versionen ab 120 behauptet. Firefox und Desktop-Programme gehören nicht zum unterstützten Umfang.
-
-**Ausführliche Anleitung:** [Schnellstart auf Deutsch](docs/QUICKSTART.de.md).
 
 ## Update 1.0.2: das Bild vor dem Klick
 
