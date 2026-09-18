@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { addStep, createGuide, createStep, moveStep, removeStep, updateStep } from '../../dist/core/operations.js';
+import { MAX_STEPS } from '../../dist/core/model.js';
+import { SerialQueue } from '../../dist/core/queue.js';
+test('guides start as local drafts with unique IDs', () => { const first = createGuide(); const second = createGuide(); assert.equal(first.revision, 0); assert.equal(first.status, 'draft'); assert.notEqual(first.id, second.id); assert.deepEqual(first.steps, []); });
+test('adding a step does not mutate the original guide', () => { const guide = createGuide(); const step = createStep(); const next = addStep(guide, step); assert.equal(guide.steps.length, 0); assert.equal(next.steps[0].id, step.id); });
+test('new step is inserted after the selected step', () => { const a = createStep(); const b = createStep(); const c = createStep(); const guide = { ...createGuide(), steps: [a, b] }; assert.deepEqual(addStep(guide, c, a.id).steps.map(x => x.id), [a.id, c.id, b.id]); });
+test('adding more than the documented step limit fails', () => { const guide = { ...createGuide(), steps: Array.from({ length: MAX_STEPS }, () => createStep()) }; assert.throws(() => addStep(guide, createStep()), /300/); });
+test('reordering preserves step IDs and content', () => { const a = createStep(); const b = createStep(); const guide = { ...createGuide(), steps: [a, b] }; assert.deepEqual(moveStep(guide, a.id, 1).steps, [b, a]); assert.deepEqual(guide.steps, [a, b]); });
+test('reordering at the edge is a no-op', () => { const a = createStep(); const guide = { ...createGuide(), steps: [a] }; assert.equal(moveStep(guide, a.id, -1), guide); assert.equal(moveStep(guide, 'missing', 1), guide); });
+test('editing resets reviewed status without touching other steps', () => { const a = createStep(); const b = createStep(); const guide = { ...createGuide(), status: 'ready', steps: [a, b] }; const next = updateStep(guide, a.id, { title: 'Changed' }); assert.equal(next.status, 'draft'); assert.equal(next.steps[1], b); assert.notEqual(next.steps[0], a); });
+test('removing a step does not mutate the source array', () => { const step = createStep(); const guide = { ...createGuide(), steps: [step] }; assert.equal(removeStep(guide, step.id).steps.length, 0); assert.equal(guide.steps.length, 1); });
+test('queue serializes asynchronous writes', async () => { const queue = new SerialQueue(); const order = []; await Promise.all([queue.enqueue(async () => { await new Promise(r => setTimeout(r, 10)); order.push(1); }), queue.enqueue(async () => { order.push(2); })]); assert.deepEqual(order, [1, 2]); });
+test('a rejected operation does not poison the queue', async () => { const queue = new SerialQueue(); await assert.rejects(queue.enqueue(async () => { throw new Error('expected'); })); assert.equal(await queue.enqueue(async () => 'saved'), 'saved'); });

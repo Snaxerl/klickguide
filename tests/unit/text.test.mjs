@@ -1,0 +1,20 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { actionTitle, cleanLabel, escapeHtml, escapeMarkdown, formatBytes, safeFilename, safeOrigin } from '../../dist/core/text.js';
+test('labels remove whitespace and directional override characters', () => { assert.equal(cleanLabel('  Speichern\n\u202e jetzt  '), 'Speichern jetzt'); });
+test('labels have a bounded size', () => { assert.equal(cleanLabel('a'.repeat(300)).length, 100); });
+test('input descriptions never require an input value', () => { assert.equal(actionTitle({ kind: 'input', label: 'E-Mail' }, 'de'), 'Fülle „E-Mail“ aus'); });
+test('missing labels use a neutral fallback', () => { assert.equal(actionTitle({ kind: 'click', label: '' }, 'en'), 'Click the highlighted control'); });
+test('manual screenshots have a neutral description', () => { assert.equal(actionTitle({ kind: 'manual', label: 'ignored' }, 'de'), 'Prüfe diesen Schritt'); });
+test('English click labels are generated', () => { assert.equal(actionTitle({ kind: 'click', label: 'Save' }, 'en'), 'Click “Save”'); });
+test('origins strip credentials, path, query and fragment', () => { assert.equal(safeOrigin('https://user:password@example.org/customer/123?token=secret#private'), 'https://example.org'); });
+test('origins preserve a nondefault port', () => { assert.equal(safeOrigin('http://localhost:4177/'), 'http://localhost:4177'); });
+for (const value of ['javascript:alert(1)', 'file:///etc/passwd', 'data:text/html,hello', 'chrome://settings', 'not-a-url'])
+  test(`reject unsafe origin ${value.split(':')[0]}`, () => { assert.equal(safeOrigin(value), ''); });
+test('HTML escapes both quotes and markup', () => { assert.equal(escapeHtml(`<img src=x onerror="a">&'`), '&lt;img src=x onerror=&quot;a&quot;&gt;&amp;&#39;'); });
+test('Markdown escapes markup and link syntax', () => { const output = escapeMarkdown('[click](javascript:run()) <script>'); assert.ok(output.includes('\\[')); assert.ok(output.includes('&lt;script&gt;')); assert.ok(!output.includes('[click](')); });
+test('filenames remove slashes and normalize accents', () => { assert.equal(safeFilename('../../Überprüfung / Neu'), 'uberprufung-neu'); });
+test('Windows device names never become export filenames', () => { assert.equal(safeFilename('CON'), 'anleitung'); assert.equal(safeFilename('LPT1'), 'anleitung'); });
+test('empty filenames have a useful fallback', () => { assert.equal(safeFilename('🎉'), 'anleitung'); });
+test('filenames remain bounded', () => { assert.equal(safeFilename('a'.repeat(500)).length, 70); });
+test('storage sizes are human-readable', () => { assert.equal(formatBytes(500), '500 B'); assert.equal(formatBytes(1024), '1 KB'); assert.equal(formatBytes(1048576), '1.0 MB'); });

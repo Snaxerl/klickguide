@@ -1,0 +1,28 @@
+{
+  "name": "klickguide",
+  "version": "1.0.3",
+  "private": true,
+  "description": "Turn a browser workflow into a clear, editable step-by-step guide.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node scripts/test.mjs",
+    "test:coverage": "npm run build && node scripts/test.mjs --coverage",
+    "test:browser": "python -m unittest discover -s tests/browser -p test_extension.py -v",
+    "check": "npm run format:check && npm run typecheck && npm test && node scripts/check.mjs",
+    "package": "npm run check && node scripts/package.mjs",
+    "demo": "node scripts/demo.mjs",
+    "format": "node scripts/format.mjs",
+    "format:check": "node scripts/format.mjs --check",
+    "test:dom": "python -m unittest discover -s tests/browser -p test_recorder_dom.py -v"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

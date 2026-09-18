@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { annotationsAfterCrop, clamp, normalizeBounds, pixelBounds, rectangleFromPoints, sameViewport } from '../../dist/core/geometry.js';
+const viewport = { width: 1000, height: 500, scrollX: 0, scrollY: 10 };
+test('clamp keeps values within both bounds', () => { assert.equal(clamp(-5, 0, 1), 0); assert.equal(clamp(2, 0, 1), 1); assert.equal(clamp(.4, 0, 1), .4); });
+test('dragging backwards produces a positive rectangle', () => { assert.deepEqual(rectangleFromPoints(.8, .7, .2, .1), { x: .2, y: .1, width: .6000000000000001, height: .6 }); });
+test('dragging beyond the image clips coordinates', () => { assert.deepEqual(rectangleFromPoints(-1, -.5, 2, 3), { x: 0, y: 0, width: 1, height: 1 }); });
+test('normalize a CSS rectangle', () => { assert.deepEqual(normalizeBounds({ x: 100, y: 50, width: 200, height: 100 }, viewport), { x: .1, y: .1, width: .2, height: .2 }); });
+test('normalize partially offscreen form fields', () => { assert.deepEqual(normalizeBounds({ x: -20, y: -10, width: 70, height: 60 }, viewport), { x: 0, y: 0, width: .05, height: .1 }); });
+test('ignore fully offscreen fields', () => { assert.equal(normalizeBounds({ x: 1100, y: 20, width: 10, height: 10 }, viewport), null); });
+test('ignore empty viewports', () => { assert.equal(normalizeBounds({ x: 1, y: 1, width: 10, height: 10 }, { ...viewport, width: 0 }), null); });
+test('redaction rounds outward, never inward', () => { assert.deepEqual(pixelBounds({ x: .101, y: .102, width: .102, height: .105 }, 100, 100), { x: 10, y: 10, width: 11, height: 11 }); });
+test('sameViewport detects scrolling', () => { assert.equal(sameViewport(viewport, { ...viewport }), true); assert.equal(sameViewport(viewport, { ...viewport, scrollY: 11 }), false); });
+test('sameViewport detects resizing', () => { assert.equal(sameViewport(viewport, { ...viewport, height: 501 }), false); });
+test('crop translates remaining annotations', () => { assert.deepEqual(annotationsAfterCrop([{ x: .25, y: .25, width: .25, height: .25 }], { x: .25, y: .25, width: .5, height: .5 }), [{ x: 0, y: 0, width: .5, height: .5 }]); });
+test('crop removes annotations outside the new image', () => { assert.deepEqual(annotationsAfterCrop([{ x: .8, y: .8, width: .1, height: .1 }], { x: 0, y: 0, width: .5, height: .5 }), []); });
+test('crop clips partially visible annotations', () => { assert.deepEqual(annotationsAfterCrop([{ x: .4, y: .4, width: .4, height: .4 }], { x: .5, y: .5, width: .5, height: .5 }), [{ x: 0, y: 0, width: .6000000000000001, height: .6000000000000001 }]); });
+test('empty crop yields no annotations', () => { assert.deepEqual(annotationsAfterCrop([{ x: 0, y: 0, width: 1, height: 1 }], { x: 0, y: 0, width: 0, height: 1 }), []); });
